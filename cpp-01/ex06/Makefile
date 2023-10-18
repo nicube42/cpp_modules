@@ -1,10 +1,10 @@
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = HI_THIS_IS_BRAIN
+NAME = harlFilter
 
 all: $(NAME)
 

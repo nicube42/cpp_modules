@@ -4,7 +4,7 @@ CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = HI_THIS_IS_BRAIN
+NAME = sed
 
 all: $(NAME)
 
