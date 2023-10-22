@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:56:03 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 16:08:43 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:40:50 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	FragTrap: public ClapTrap
+class	FragTrap: virtual public ClapTrap
 {
 	public:
         FragTrap(void);
@@ -28,6 +28,11 @@ class	FragTrap: public ClapTrap
         FragTrap &operator= (const FragTrap &fragtrap);
         
         ~FragTrap(void);
+
+        int			getHitPoints(void);
+        int			getAttackDamage(void);
+		int			getEnergyPoints(void);
+		std::string	getName(void);
         
         void    highFiveseGuys(void);
 };

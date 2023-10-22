@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:06:44 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 15:59:47 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:41:09 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	ScavTrap: public ClapTrap
+class	ScavTrap: virtual public ClapTrap
 {
 	public:
         ScavTrap(void);
@@ -28,6 +28,11 @@ class	ScavTrap: public ClapTrap
         ScavTrap &operator= (const ScavTrap &scavtrap);
         
         ~ScavTrap(void);
+
+        int			getHitPoints(void);
+        int			getAttackDamage(void);
+		int			getEnergyPoints(void);
+		std::string	getName(void);
 
         void    guardGate(void);
 };

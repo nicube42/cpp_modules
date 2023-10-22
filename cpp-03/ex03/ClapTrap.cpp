@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:07:36 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 15:52:46 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:28:18 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ ClapTrap::ClapTrap(void) : _name("(null)"),
                             _attack_damage(0)
 {
     std::cout << "Default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) : _name(name)
+{
+    std::cout << "Constructor called with name " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad) :  _name(name),

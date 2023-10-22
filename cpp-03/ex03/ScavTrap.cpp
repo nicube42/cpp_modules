@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:06:53 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 15:50:50 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:42:54 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,24 @@ ScavTrap::~ScavTrap(void)
 void    ScavTrap::guardGate(void)
 {
     std::cout << "ScavTrap is now in guard mode" << std::endl;
+}
+
+int ScavTrap::getHitPoints(void)
+{
+    return (100);
+}
+
+int ScavTrap::getAttackDamage(void)
+{
+    return (20);
+}
+
+int ScavTrap::getEnergyPoints(void)
+{
+    return (50);
+}
+
+std::string ScavTrap::getName(void)
+{
+    return (this->_name);
 }

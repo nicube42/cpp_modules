@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:55:52 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 16:17:10 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:43:24 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,24 @@ void    FragTrap::highFiveseGuys(void)
 
     std::cout << this->_name << " request an highfive ! (press enter to high five)" << std::endl;
     std::getline(std::cin, str);
+}
+
+int FragTrap::getHitPoints(void)
+{
+    return (100);
+}
+
+int FragTrap::getAttackDamage(void)
+{
+    return (30);
+}
+
+int FragTrap::getEnergyPoints(void)
+{
+    return (100);
+}
+
+std::string FragTrap::getName(void)
+{
+    return (this->_name);
 }

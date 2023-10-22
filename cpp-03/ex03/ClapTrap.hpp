@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:07:34 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/20 16:16:12 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/22 11:51:35 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class	ClapTrap
 	public:
         ClapTrap(void);
         ClapTrap(std::string name, int hp, int ep, int ad);
+        ClapTrap(std::string name);
         ClapTrap(const ClapTrap &claptrap);
         ClapTrap &operator= (const ClapTrap &claptrap);
         ~ClapTrap(void);
