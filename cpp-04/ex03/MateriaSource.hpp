@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:17:05 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/23 17:20:00 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:59:40 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
+# include "IMateriaSource.hpp"
 
-class	MateriaSource
+class	MateriaSource : public IMateriaSource
 {
     private:
 		AMateria	*(_inventory[4]);
