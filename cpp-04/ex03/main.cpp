@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:25:51 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/23 19:36:12 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/23 22:53:58 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,12 @@ int main(void)
     chara->unequip(0);
     badGuy->unequip(0);
     std::cout << std::endl;
+    
+    delete chara;
+    delete badGuy;
 
+    system("leaks polymorphism");
+    
     return (0);
 }
 
