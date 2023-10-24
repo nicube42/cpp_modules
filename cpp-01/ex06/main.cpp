@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ndiamant <ndiamant@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:09:02 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/10/18 16:23:36 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:16:22 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	select_level(char **av, Harl & harl)
 		default:
 		{
 			std::cout << "Error" << std::endl;
+			std::cout << std::endl;
 			return (-1);
 		}
 	}
