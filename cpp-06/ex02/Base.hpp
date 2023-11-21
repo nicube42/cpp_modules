@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 13:35:08 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/21 11:17:44 by ndiamant         ###   ########.fr       */
+/*   Created: 2023/11/21 09:44:57 by ndiamant          #+#    #+#             */
+/*   Updated: 2023/11/21 10:17:57 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
+#ifndef BASE_HPP
 
-# define SCALARCONVERTER_HPP
+# define BASE_HPP
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"
@@ -26,20 +26,29 @@
 # include <ctime>
 # include <limits>
 # include <cmath>
-# include <regex>
+# include <cstdint>
 
-class	ScalarConverter
+class	Base
 {
 	private:
-		ScalarConverter(void);
-		ScalarConverter(const ScalarConverter &scalarconverter);
-		ScalarConverter  &operator= (const ScalarConverter &scalarconverter);
 
 	public:
 
-		virtual ~ScalarConverter(void) = 0;
+		Base(void);
+		virtual ~Base(void);
 
-		static void convert(const std::string str);
+		class WrongClassException : public std::exception
+		{
+			public:
+			const char* what() const throw() {
+				return "neither A B or C";
+			}
+		};
+
+		Base	*generate(void);
+		void	identify(Base *p);
+		void	identify(Base &p);
+
 };
 
 #endif
