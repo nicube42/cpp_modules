@@ -1,7 +1,6 @@
-NAME	=		Conversion
+NAME	=		Array
 
 SRC			=	main.cpp \
-				ScalarConverter.cpp \
 
 OBJ			=	$(SRC:.cpp=.o)
 
