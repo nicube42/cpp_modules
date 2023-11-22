@@ -1,8 +1,9 @@
-NAME	=		Array
+NAME	=		Span
 
 SRC			=	main.cpp \
+				Span.cpp \
 
-HEADERS		=	Array.hpp
+HEADERS		=	Span.hpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
@@ -10,7 +11,7 @@ CC			=	g++
 
 RM			=	rm -f
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 
 all:			$(NAME)

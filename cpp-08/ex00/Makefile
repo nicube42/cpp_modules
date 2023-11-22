@@ -1,8 +1,8 @@
-NAME	=		Array
+NAME	=		EasyFind
 
 SRC			=	main.cpp \
 
-HEADERS		=	Array.hpp
+HEADERS		=	easyfind.hpp
 
 OBJ			=	$(SRC:.cpp=.o)
 
@@ -10,7 +10,7 @@ CC			=	g++
 
 RM			=	rm -f
 
-CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
+CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 
 all:			$(NAME)
