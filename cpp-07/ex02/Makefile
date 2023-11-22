@@ -2,6 +2,8 @@ NAME	=		Array
 
 SRC			=	main.cpp \
 
+HEADERS		=	Array.hpp
+
 OBJ			=	$(SRC:.cpp=.o)
 
 CC			=	g++
@@ -14,7 +16,10 @@ CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
-				$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+				$(CC) $(CPPFLAGS) -I $(HEADERS) $(OBJ) -o $(NAME)
+
+%.o:			%.cpp $(HEADERS)
+				$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 				$(RM) $(OBJ)
