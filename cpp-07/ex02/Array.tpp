@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:51:46 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/22 12:09:00 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:49:04 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Array<T>::Array(unsigned int n) : _array(new T[n]), _n(n)
 
 
 template <class T>
-Array<T>::Array(const Array &array) : _array(array._array), _n(array._n)
+Array<T>::Array(const Array &array) : _array(new T[array._n]), _n(array._n)
 {
 }
 
@@ -35,7 +35,8 @@ Array<T>& Array<T>::operator=(const Array<T>& other)
 {
 	if (this != &other)
 	{
-		delete [] this->_array;
+		if (this->_array)
+			delete [] this->_array;
 		this->_n = other._n;
 		this->_array = new T[this->_n];
 		for (unsigned int i = 0; i < this->_n; i++)
@@ -47,7 +48,7 @@ Array<T>& Array<T>::operator=(const Array<T>& other)
 template <class T>
 T &Array<T>::operator[](unsigned int index)
 {
-	if (index >= this->_n)
+	if (index >= this->_n || index < 0)
 		throw(std::out_of_range(RED"out of range"RESET));
 	return (_array[index]);
 }
@@ -55,7 +56,7 @@ T &Array<T>::operator[](unsigned int index)
 template <class T>
 const T &Array<T>::operator[](unsigned int index) const
 {
-	if (index >= this->_n)
+	if (index >= this->_n || index < 0)
 		throw(std::out_of_range(RED"out of range"RESET));
 	return (_array[index]);
 }
