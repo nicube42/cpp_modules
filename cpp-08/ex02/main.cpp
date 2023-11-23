@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:45 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/23 12:04:55 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:05:36 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,10 @@ int main()
 	lst.push_back(5);
 	lst.push_back(17);
 
-	// Display the last element
 	std::cout << lst.back() << std::endl;
 
-	// Remove the last element
 	lst.pop_back();
 
-	// Display the size
 	std::cout << lst.size() << std::endl;
 
 	lst.push_back(3);
