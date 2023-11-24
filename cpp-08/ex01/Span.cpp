@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:04:09 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/22 16:59:50 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/11/24 09:20:37 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int		Span::shortestSpan(void)
 
 	for (it = this->_list.begin(); it != this->_list.end(); ++it)
 	{
+		if (std::next(it) == this->_list.end())
+			break;
 		if (*(it + 1))
 		{
 			if (std::abs(*(it + 1) - *it) < shortest_span)
@@ -93,6 +95,8 @@ int		Span::longestSpan(void)
 
 	for (it = this->_list.begin(); it != this->_list.end(); ++it)
 	{
+		if (std::next(it) == this->_list.end())
+			break;
 		if (*(it + 1))
 		{
 			if (std::abs(*(it + 1) - *it) > longest_span)
