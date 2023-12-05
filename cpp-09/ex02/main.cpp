@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:45:19 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 15:37:28 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:41:25 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main (int ac, char **av)
 		}
 		catch (std::exception &e)
 		{
-			std::cout << "Please enter only numbers" << std::endl;
+			std::cout << RED << "Please enter only numbers" << RESET << std::endl;
 			return (1);
 		}
 		PmergeMe pmergeme(arr, ac - 1);

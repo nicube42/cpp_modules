@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:40 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 13:35:09 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:21:47 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,11 @@ void Rpn::run(const std::string& str)
 	{
 		if (isdigit(token[0]))
 		{
-			if (!isdigit(lastToken[0]) || i < 2)
-			{
-				this->_stack.push(std::stoi(token));
-				lastToken = token;
-			}
+			this->_stack.push(std::stoi(token));
+			lastToken = token;
 		}
 		else if (token == "+")
 		{
-			if (lastToken == "+" || lastToken == "-" || lastToken == "*" || lastToken == "/")
-			{
-				std::cerr << "Invalid input, stopped calculation at this spot" << std::endl;
-				break;
-			}
 			int operand2 = this->_stack.top();
 			this->_stack.pop();
 			int operand1 = this->_stack.top();
@@ -69,11 +61,6 @@ void Rpn::run(const std::string& str)
 		}
 		else if (token == "-")
 		{
-			if (lastToken == "+" || lastToken == "-" || lastToken == "*" || lastToken == "/")
-			{
-				std::cerr << "Invalid input, stopped calculation at this spot" << std::endl;
-				break;
-			}
 			int operand2 = this->_stack.top();
 			this->_stack.pop();
 			int operand1 = this->_stack.top();
@@ -83,11 +70,6 @@ void Rpn::run(const std::string& str)
 		}
 		else if (token == "*")
 		{
-			if (lastToken == "+" || lastToken == "-" || lastToken == "*" || lastToken == "/")
-			{
-				std::cerr << "Invalid input, stopped calculation at this spot" << std::endl;
-				break;
-			}
 			int operand2 = this->_stack.top();
 			this->_stack.pop();
 			int operand1 = this->_stack.top();
@@ -97,21 +79,24 @@ void Rpn::run(const std::string& str)
 		}
 		else if (token == "/")
 		{
-			if (lastToken == "+" || lastToken == "-" || lastToken == "*" || lastToken == "/")
-			{
-				std::cerr << "Invalid input, stopped calculation at this spot" << std::endl;
-				break;
-			}
 			int operand2 = this->_stack.top();
 			this->_stack.pop();
 			int operand1 = this->_stack.top();
 			this->_stack.pop();
-			this->_stack.push(operand1 / operand2);
+			if (operand2 != 0)
+				this->_stack.push(operand1 / operand2);
+			else
+			{
+				std::cerr << BLUE << "The result of " << RESET << MAG << str << RESET
+					<< " is: " << RED << "invalid" << RESET << std::endl;
+				return;
+			}
 			lastToken = token;
 		}
 		else
 		{
-			std::cerr << "Invalid input" << std::endl;
+			std::cerr << BLUE << "The result of " << RESET << MAG << str << RESET
+				<< " is: " << RED << "invalid" << RESET << std::endl;
 			return;
 		}
 		i++;
