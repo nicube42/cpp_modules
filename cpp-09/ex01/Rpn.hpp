@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:24 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 13:45:39 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:39:38 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,12 @@ class	Rpn
 {
 	private:
 
-	std::stack<int>	_stack;
+		/*
+			built on top of an existing container. Of type last in first out (LIFO).
+			It is useful in this case because we only need to store and access the lasts elements
+			of the list.
+		*/
+		std::stack<int>	_stack;
 
 	public:
 
@@ -49,7 +54,7 @@ class	Rpn
 		Rpn		&operator= (const Rpn &rpn);
 		~Rpn(void);
 
-	void run(const std::string& str);
+		void run(const std::string& str);
 };
 
 #endif

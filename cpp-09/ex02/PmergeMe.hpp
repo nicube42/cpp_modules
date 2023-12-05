@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:46:03 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 15:36:22 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:39:50 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,22 @@ class	PmergeMe
 {
 	private:
 
-	/*
-		vector = dynamic array, efficient at the end for insertion and deletion.
-		Continuous memory makes vector cache friendly. This is what makes vector more efficient than deque in this algoritm.
-	*/
-	std::vector<int>	_stack1;
+		/*
+			vector = dynamic array, efficient at the end for insertion and deletion.
+			Continuous memory makes vector cache friendly. This is what makes vector more efficient than deque in this algoritm.
+		*/
+		std::vector<int>	_stack1;
 
-	/*
-		deque = double ended queue, serie of fixed size arrays. Efficient at both ends for insertion and deletion.
-	*/
-	std::deque<int>		_stack2;
-	int					_size;
-	float				_durationVector;
-	float				_durationDeque;
-	
-	void mergeSortVector(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	void mergeSortDeque(std::deque<int>::iterator begin, std::deque<int>::iterator end);
+		/*
+			deque = double ended queue, serie of fixed size arrays. Efficient at both ends for insertion and deletion.
+		*/
+		std::deque<int>		_stack2;
+		int					_size;
+		float				_durationVector;
+		float				_durationDeque;
+		
+		void mergeSortVector(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		void mergeSortDeque(std::deque<int>::iterator begin, std::deque<int>::iterator end);
 
 	public:
 

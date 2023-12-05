@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:27:02 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/24 11:42:53 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:39:42 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ class	BitcoinExchange
 {
 	private:
 
-	std::map<std::string, float>	_database;
+		/*
+			Stores elements in a key-value pair. Less efficient than an hash table but still
+			efficient to search for a specific key in a sorted list.
+		*/
+		std::map<std::string, float>	_database;
 
 	public:
 
@@ -49,9 +53,9 @@ class	BitcoinExchange
 		BitcoinExchange		&operator= (const BitcoinExchange &btcexchange);
 		~BitcoinExchange(void);
 
-	void addRecord(const std::string& key, float value);
-	void printDatabase(void) const;
-	void printCorrespondingValue(const std::string& key, float value) const;
+		void addRecord(const std::string& key, float value);
+		void printDatabase(void) const;
+		void printCorrespondingValue(const std::string& key, float value) const;
 };
 
 #endif
