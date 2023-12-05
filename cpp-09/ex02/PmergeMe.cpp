@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:44:42 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 15:13:32 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:51:25 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,12 @@ void PmergeMe::mergeSortVector(std::vector<int>::iterator begin, std::vector<int
 		std::inplace_merge(begin, middle, end);
 	}
 }
+
+/*
+	std::inplace_merge will merge two sorted ranges [first, middle) and [middle, last) into one sorted range [first, last).
+	Has the merge is done recursively, the algorithm will split the range in two until it reaches a range of size 1.
+	Then it will merge the two ranges of size 1 into a range of size 2, then merge the two ranges of size 2 into a range of size 4, etc.
+*/
 
 void PmergeMe::mergeSortDeque(std::deque<int>::iterator begin, std::deque<int>::iterator end)
 {
