@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:27:23 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 18:08:53 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 18:10:13 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 	std::string line;
 	BitcoinExchange btc;
 	getline(file, line);
-	if (line.empty() || line == "date | value")
+	if (line.empty() || (line == "date | value" && file.peek() == EOF))
 	{
 		std::cerr << "File is empty\n";
 		return (1);
