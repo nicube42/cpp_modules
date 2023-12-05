@@ -6,22 +6,50 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 09:53:19 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/24 11:51:18 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:56:57 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	checkIfDateValid(std::string line)
+bool isLeapYear(int year)
 {
-	if (std::isdigit(line[0]) && std::isdigit(line[1]) && std::isdigit(line[2]) && std::isdigit(line[3]))
-		if (line[4] == '-')
-			if (std::isdigit(line[5]) && std::isdigit(line[6]) && (line[5] == '0' || line[5] == '1'))
-				if (line[7] == '-')
-					if (std::isdigit(line[8]) && std::isdigit(line[9])
-						&& (line[8] == '0' || line[8] == '1' || line[8] == '2' || line[8] == '3'))
-						return (1);
-	return (0);
+	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+int getDaysInMonth(int month, int year)
+{
+	switch (month) {
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			return 31;
+		case 4: case 6: case 9: case 11:
+			return 30;
+		case 2:
+			return isLeapYear(year) ? 29 : 28;
+		default:
+			return 0;
+	}
+}
+
+int checkIfDateValid(const std::string& line)
+{
+	// if (line.length() != 10)
+	// 	return 0;
+	if (!std::isdigit(line[0]) || !std::isdigit(line[1]) || !std::isdigit(line[2]) || !std::isdigit(line[3]) || line[4] != '-' ||
+		!std::isdigit(line[5]) || !std::isdigit(line[6]) || line[7] != '-' || 
+		!std::isdigit(line[8]) || !std::isdigit(line[9]))
+			return 0;
+
+	int year = std::stoi(line.substr(0, 4));
+	int month = std::stoi(line.substr(5, 2));
+	int day = std::stoi(line.substr(8, 2));
+
+	if (month < 1 || month > 12)
+		return 0;
+	if (day < 1 || day > getDaysInMonth(month, year))
+		return 0;
+
+	return 1;
 }
 
 int	checkIfFormatValid(std::string line)
