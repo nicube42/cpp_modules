@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:02:16 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 16:15:27 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:51:38 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac > 2)
 	{
-		std::cout << "Please enter only one calcul" << std::endl;
+		std::cout << "Please enter a calculation of the type <\"7 7 * 7 -\">" << std::endl;
 		return (0);
 	}
 	else if (ac == 1)
