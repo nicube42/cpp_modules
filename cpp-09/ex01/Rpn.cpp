@@ -6,7 +6,7 @@
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:08:40 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/11/24 15:59:58 by ndiamant         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:35:09 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ void Rpn::run(const std::string& str)
 	}
 	int result = this->_stack.top();
 	this->_stack.pop();
-	std::cout << result << std::endl;
+	std::cout << std::endl << BLUE << "The result of " << MAG << str << RESET
+		<< " is: " << RESET << GREEN << result << RESET << std::endl << std::endl;
 }
 

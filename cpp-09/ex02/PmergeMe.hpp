@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   Pmergeme.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndiamant <ndiamant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 15:08:24 by ndiamant          #+#    #+#             */
-/*   Updated: 2023/12/05 13:45:39 by ndiamant         ###   ########.fr       */
+/*   Created: 2023/12/05 13:46:03 by ndiamant          #+#    #+#             */
+/*   Updated: 2023/12/05 15:11:11 by ndiamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
+#ifndef PMERGEME_HPP
 
-# define RPN_HPP
+# define PMERGEME_HPP
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"
@@ -29,27 +29,41 @@
 # include <sstream>
 # include <regex>
 # include <string>
-# include <map>
-# include <stack>
+# include <vector>
+# include <deque>
 # include <iterator>
 # include <stdexcept>
 # include <random>
+# include <algorithm>
+# include <ctime>
 
 
-class	Rpn
+class	PmergeMe
 {
 	private:
 
-	std::stack<int>	_stack;
+	std::vector<int>	_stack1;
+	std::deque<int>		_stack2;
+	int					_size;
+	float				_durationVector;
+	float				_durationDeque;
+	
+	void mergeSortVector(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void mergeSortDeque(std::deque<int>::iterator begin, std::deque<int>::iterator end);
 
 	public:
 
-		Rpn(void);
-		Rpn(const Rpn &rpn);
-		Rpn		&operator= (const Rpn &rpn);
-		~Rpn(void);
+		PmergeMe(void);
+		PmergeMe(int *arr, int size);
+		PmergeMe(const PmergeMe &pmergeme);
+		PmergeMe &operator= (const PmergeMe &pmergeme);
+		~PmergeMe(void);
 
-	void run(const std::string& str);
+		void displayBeforeSort(void);
+		void displayAfterSort(void);
+		void displayDuration(void);
+		void sortDeque(void);
+		void sortVector(void);
 };
 
 #endif
